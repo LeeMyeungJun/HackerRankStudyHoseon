@@ -4,18 +4,11 @@ void update(int *a,int *b) {
    int x = *a;
    int y = *b;
 
+  *a = x + y;
    if(x > y)
-   {
-        *a = x + y;
         *b = x - y;
-   }
    else
-   {
-       *a = x + y;
        *b = y - x;
-   }
-
-
 }
 
 int main() {
