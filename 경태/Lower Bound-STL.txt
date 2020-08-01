@@ -1,0 +1,42 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n, x;
+    vector<int> v;
+    cin >> n;
+    for (int i = 0; i < n; ++i)
+    {
+        cin >> x;
+        v.push_back(x);
+    }
+    sort(v.begin(), v.end());
+    int q;
+    vector<int> vv;
+    vector<bool> vvv;
+    vector<int>::iterator low;
+    cin >> q;
+    for (int i = 0; i < q; ++i)
+    {
+        cin >> x;
+        low = lower_bound(v.begin(), v.end(), x);
+        if (x == v[low-v.begin()])
+            vvv.push_back(true);
+        else
+            vvv.push_back(false);
+        vv.push_back(low - v.begin() + 1);
+    }
+    for (int i = 0; i < q; ++i)
+    {
+        if (vvv[i])
+            cout << "Yes " << vv[i] << endl;
+        else
+            cout << "No " << vv[i] << endl;
+    }
+
+    return 0;
+}
