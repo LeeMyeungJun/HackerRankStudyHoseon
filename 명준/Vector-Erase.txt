@@ -1,51 +1,38 @@
-	vector<int> v;
-	int nCount = 0;
-	int num = 0;
-	int i = 0, j = 0;
-	cin >> nCount;
-	for (i = 0; i < nCount; i++)
-	{
-		cin >> num;
-		v.push_back(num);
-	}
-
-	cin >> num;
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
 
 
-	for (i = 0; i < v.size(); i++)
-	{
-		if (v[i] == num)
-		{
-			break;
-		}
-	}
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+     vector<int> v;
+    int nCount = 0;
+    int num = 0;
+    int i = 0;
+    cin >> nCount;
+    for (i = 0; i < nCount; i++)
+    {
+        cin >> num;
+        v.push_back(num);
+    }
 
-	cout << i << endl;
+    cin >> num;
 
-	cin >> num >> nCount;
+    v.erase(v.begin()+num-1);
+    //변수재활용하는중..
+    cin>>num>>nCount;
+    v.erase(v.begin()+num-1 ,v.begin()+nCount-1 );
+    cout<<v.size()<<endl;
+    
+    for(i = 0 ;i<v.size();i++ )
+    {
+        cout<< v[i]<<" ";
+    }
 
+ 
 
-	for (i = 0; i < v.size(); i++)
-	{
-		if (v[i] == num)
-		{
-			break;
-		}
-	}
-
-
-	for (j = 0; j < v.size(); j++)
-	{
-		if (v[j] == nCount)
-		{
-			break;
-		}
-	}
-
-	v.erase(v.begin() + j, v.begin() + i);
-	cout << endl;
-	for (i = 0; i <v.size(); i++)
-	{
-		cout << v[i] << " ";
-	}
-
+    return 0;
+}
