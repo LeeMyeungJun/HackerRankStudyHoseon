@@ -1,0 +1,41 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+
+vector<int> vecTemp;
+vector<int>::iterator low;
+ int nCount = 0 ;
+ int num = 0;
+ int i;
+ cin>>nCount;
+for(i = 0; i < nCount; i++)
+{
+    cin>>num;
+    vecTemp.push_back(num);
+}
+
+    cin>>nCount;
+
+ for(i = 0 ; i <nCount; i++)
+ {
+    cin>>num;
+    low = lower_bound(vecTemp.begin(), vecTemp.end(), num);
+    
+    if(vecTemp[low-vecTemp.begin()] == num)
+    {
+        cout << "Yes " << low-vecTemp.begin()+1 << '\n';
+    }
+    else 
+    {
+        cout << "No " << low-vecTemp.begin()+1 << '\n';
+
+    }
+ }
+    return 0;
+}
