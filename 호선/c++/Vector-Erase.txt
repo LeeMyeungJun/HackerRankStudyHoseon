@@ -1,0 +1,12 @@
+vector<int> num;
+    int size, n, eraseNum;
+
+    cin >> size;
+    for(int i = 0; i < size; i++)
+    {
+        cin >> n;
+        num.push_back(n);
+    }
+
+    cin >> eraseNum;
+    num.erase(num.begin() + (eraseNum-1));
