@@ -1,0 +1,40 @@
+#include <iostream>
+
+using namespace std;
+
+class Rectangle
+{
+public:
+	int width;
+	int height;
+	void display();
+};
+void Rectangle::display()
+{
+	cout << width << ' ' << height << endl;
+}
+class RectangleArea : public Rectangle
+{
+public:
+	void read_input();
+	void display();
+};
+void RectangleArea::read_input()
+{
+	cin >> this->width;
+	cin >> this->height;
+}
+void RectangleArea::display()
+{
+	cout << this->width * this->height;
+}
+int main()
+{
+	RectangleArea r_area;
+	r_area.read_input();
+
+	r_area.Rectangle::display();
+	r_area.display();
+
+	return 0;
+}
