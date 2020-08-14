@@ -12,13 +12,14 @@ int main() {
 		double C; cin >> C;
 
 		cout.copyfmt(std::ios(NULL));
-		cout << std::hex << std::showbase << (int)A << endl;
+		cout << std::hex << std::showbase << std::left << (long long)A << endl;
 		cout.copyfmt(std::ios(NULL));
 		cout.setf(ios_base::fixed, ios_base::floatfield);
 		cout << std::setprecision(2) << std::showpos << std::right << std::setfill('_') << std::setw(15) << B << endl;
 		cout.copyfmt(std::ios(NULL));
 		cout.setf(ios_base::scientific, ios_base::floatfield);
 		cout << std::setprecision(9) << std::uppercase << C << endl;
+
 	}
 	return 0;
 
