@@ -1,0 +1,29 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <string>
+using namespace std;
+
+class HTML{
+private:
+	string tag_name;
+	string attribute_name;
+	string value;
+public:
+	void set_tag_name(string tag);
+	void set_attribute_name(string att);
+	void set_value(string val);
+};
+
+int main() {
+	int n, q;
+	cin >> n >> q;
+	for (int i = 0; i < n; i++)
+	{
+		HTML inputHTML;
+	}
+	/* Enter your code here. Read input from STDIN. Print output to STDOUT */
+	return 0;
+}
